@@ -10,9 +10,9 @@ class Ticket implements Runnable {
 	@Override
 	public void run() {
 		while (true) {
-			// synchronized (this) { //同步代码块
+			 synchronized (this) { //同步代码块
 			if (tick > 0) {
-				lock.lock();
+			//	lock.lock();
 				try {
 					Thread.sleep(1000);
 					System.out.println(Thread.currentThread().getName() + "完成售票，余票为：" + --tick);
@@ -20,11 +20,11 @@ class Ticket implements Runnable {
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				} finally {
-					lock.unlock();
+				//	lock.unlock();
 				}
 			}
 		}
-		// }
+		 }
 	}
 }
 
