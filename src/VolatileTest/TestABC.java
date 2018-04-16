@@ -18,8 +18,8 @@ class ABC {
 
 				condition1.await();
 			}
-				System.out.print(Thread.currentThread().getName());
-			
+			System.out.print("A");
+
 			number = 2;
 			condition2.signal();
 		} catch (InterruptedException e) {
@@ -37,8 +37,8 @@ class ABC {
 
 				condition2.await();
 			}
-				System.out.print(Thread.currentThread().getName());
-			
+			System.out.print("B");
+
 			number = 3;
 			condition3.signal();
 		} catch (InterruptedException e) {
@@ -55,8 +55,8 @@ class ABC {
 
 				condition3.await();
 			}
-				System.out.print(Thread.currentThread().getName());
-			
+			System.out.print("C");
+
 			number = 1;
 			condition1.signal();
 		} catch (InterruptedException e) {

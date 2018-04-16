@@ -3,8 +3,8 @@ package VolatileTest;
 import java.util.concurrent.atomic.AtomicInteger;
 
 class AtomicDemo implements Runnable{
-	//private int serialNumber=0;
-	private AtomicInteger atomicInteger=new AtomicInteger();
+//	private  int serialNumber=0;
+	private  AtomicInteger atomicInteger=new AtomicInteger();
 	
 	
 	public int getSerialNumber() {

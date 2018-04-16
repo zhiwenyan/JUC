@@ -3,22 +3,22 @@ package VolatileTest;
 public class TestABC1 {
 	private int flag = 1;
 
+
 	private synchronized void loopA() {
 		if (flag != 1) {
-			System.out.print("A");
 			try {
 				wait();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
+		System.out.print("A");
 		flag = 2;
-		notifyAll();
+		notify();
 	}
 
 	private synchronized void loopB() {
 		if (flag != 2) {
-			System.out.print("B");
 			try {
 				wait();
 			} catch (InterruptedException e) {
@@ -26,21 +26,22 @@ public class TestABC1 {
 			}
 
 		}
+		System.out.print("B");
 		flag = 3;
-		notifyAll();
+		notify();
 	}
 
 	private synchronized void loopC() {
 		if (flag != 3) {
-			System.out.print("C");
 			try {
 				wait();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
+		System.out.print("C");
 		flag = 1;
-		notifyAll();
+		notify();
 	}
 
 	public static void main(String[] args) {
